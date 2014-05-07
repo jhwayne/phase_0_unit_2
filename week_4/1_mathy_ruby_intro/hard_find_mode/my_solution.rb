@@ -14,9 +14,19 @@
 
 
 # 2. Initial Solution
+numbers=[1,1,2,3,4,4,4,5]
+nums=[20,20,20,1,3,4,5,5,5,20]
+
+def mode(array)
+	a = Hash.new(0)
+	array.each {|num| a[num] += 1}
+	b=a.sort_by {|k,v| v}.reverse
+	return b[0][0]
+	
+end
 
 
-
+print mode(nums)
 
 # 3. Refactored Solution
 
