@@ -17,9 +17,8 @@
 
 #2. Initial Solution
 def total(my_array)
-var="sum"
 sum = 0
-for i in my_array
+my_array.each do |i|
 sum +=  i 
 end
 puts sum
@@ -30,7 +29,7 @@ total([1,2,3,4])
 
 def sentence_maker(my_sentence)
 sentence = ""
-for i in my_sentence
+my_sentence.each do |i|
 sentence += i
 sentence += " "
 end

@@ -15,7 +15,11 @@
 
 # 2. Initial Solution
 
+array=[1,2,3]
 
+puts array.pad(7,"Jake")
+
+puts array.pad!(7,"Wayne")
 
 
 # 3. Refactored Solution

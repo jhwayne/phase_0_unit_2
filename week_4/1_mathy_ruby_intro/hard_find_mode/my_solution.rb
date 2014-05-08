@@ -25,7 +25,6 @@ def mode(array)
 	
 end
 
-
 print mode(nums)
 
 # 3. Refactored Solution
