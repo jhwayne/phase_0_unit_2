@@ -3,7 +3,7 @@
 # I worked on this challenge [by myself, with: ].
 
 # EXPLANATION OF require_relative
-#
+# require relative is similar to require except that it calls a local file relative the file you are wokring in.
 #
 require_relative 'state_data'
 
@@ -23,7 +23,7 @@ class VirusPredictor
   end
 
   private  #what is this?  what happens if it were cut and pasted above the virus_effects method
-
+  # If private is invoked without arguments, it sets access to private for all subsequent methods. 
   def predicted_deaths(population_density, population, state)
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor

@@ -13,7 +13,11 @@ boggle_board = [["b", "r", "a", "e"],
 # Pseudocode
 
 # Initial Solution
+  def create_word(board, *coords)
+    coords.map { |coord| board[coord.first][coord.last]}.join("")
+  end
 
+  puts create_word(boggle_board,[2,1],[1,1],[2,2],[1,2])
 
 # Refactored Solution
 
@@ -30,6 +34,11 @@ boggle_board = [["b", "r", "a", "e"],
 # Pseudocode
 
 # Initial Solution
+def get_row(board,row)
+	board[row].join(" ")
+end
+
+puts get_row(boggle_board,3)
 
 
 # Refactored Solution
@@ -50,7 +59,15 @@ boggle_board = [["b", "r", "a", "e"],
 
 # Initial Solution
 
+def get_column(board,column)
+    col_array =[]
+    board.each do |row|
+      col_array << row[column]
+    end
+    col_array
+end
 
+puts get_column(boggle_board,3)
 # Refactored Solution
 
 
