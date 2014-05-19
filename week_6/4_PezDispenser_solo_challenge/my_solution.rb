@@ -21,9 +21,31 @@
 # 3. Initial Solution
 
 class PezDispenser
+
+def initialize(flavors)
+	@pez_candy= flavors.first(12).shuffle
+end
  
-# your code here!
- 
+def count_pez
+	@pez_candy.size
+end
+
+def take_pez
+	@pez_candy.shift # had pop, but realistically the pez you get is the top pez, so shift takes the first item out of array!
+end
+
+def add_pez(flavor)
+	if count_pez==12 
+		raise ArgumentError.new("Pez Dispenser is full! Eat some Pez!")
+	else
+		@pez_candy.push(flavor)
+	end
+end
+
+def all_pez
+	@pez_candy.join("\n")
+end
+
 end
  
 
@@ -33,21 +55,20 @@ end
 
 
 
-
-
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
-flavors = %w(cherry chocolate cola grape lemon orange peppermint raspberry strawberry).shuffle
+flavors = %w(cherry chocolate cola grape lemon orange peppermint raspberry strawberry bluerberry mango lemon).shuffle
 super_mario = PezDispenser.new(flavors)
-puts "A new pez dispenser has been created. You have #{super_mario.pez_count} pez!"  
+puts "A new pez dispenser has been created. You have #{super_mario.count_pez} pez!"  
 puts "Here's a look inside the dispenser:"  
-puts super_mario.see_all_pez 
-puts "Adding a purple pez."
-super_mario.add_pez("purple")   # mmmmm, purple flavor
-puts "Now you have #{super_mario.pez_count} pez!"
+puts super_mario.all_pez 
 puts "Oh, you want one do you?"
-puts "The pez flavor you got is: #{super_mario.get_pez}"
-puts "Now you have #{super_mario.pez_count} pez!"
+puts "The pez flavor you got is: #{super_mario.take_pez}"
+puts "Now you have #{super_mario.count_pez} pez!"
+puts "Adding a grape pez."
+super_mario.add_pez("grape")   # mmmmm, purple flavor
+puts "Now you have #{super_mario.count_pez} pez!"
+puts super_mario.all_pez
 
 
 

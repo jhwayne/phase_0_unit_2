@@ -14,21 +14,24 @@
 
 class Die
   def initialize(sides)
-    @sides= sides
+    @sides=sides
+    if @sides < 1
+      raise ArgumentError.new("A die cant have #{@sides} sides!")
+    else
+      return @sides
+    end
+
   end
   
   def sides
-  	if @sides < 3
-  		raise ArgumentError.new("A die cant have #{@sides} sides!")
-  	end
-    puts @sides
+    return @sides
   end
   
   def roll
     roll=(1..@sides).to_a
     roll.shuffle!
     #puts roll
-    puts roll[0]
+    return roll[0]
   end
 end
 

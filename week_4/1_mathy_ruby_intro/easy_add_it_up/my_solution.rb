@@ -21,22 +21,29 @@ sum = 0
 my_array.each do |i|
 sum +=  i 
 end
-puts sum
+return sum
 end
 
 total([1,2,3,4])
+total([1, 2, 3, 4, 5, 5, 7])
 
 
 def sentence_maker(my_sentence)
-sentence = ""
-my_sentence.each do |i|
-sentence += i
-sentence += " "
+  sentence = ""
+  my_sentence.each do |i|
+  	if i.is_a? Integer== true
+    	i.to_s
+    end
+    sentence += i
+    if i != my_sentence[-1]
+    	sentence += " "	
+    end
+  end
+  sentence += "."
+  return sentence.capitalize
 end
-sentence += "."
-puts sentence
-end
-sentence_maker(["i", "want", "to", "learn", "how", "to", "code"])
+
+puts sentence_maker(["alaska", "has", "over", 586 , "thousand", "miles"])
 
 
 # 3. Refactored Solution
