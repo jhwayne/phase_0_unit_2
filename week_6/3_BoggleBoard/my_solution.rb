@@ -7,12 +7,11 @@
 # 2. Pseudocode
 
 
-
 # 3. Initial Solution
 class BoggleBoard
 
 def initialize
-	@board=[["b", "r", "a", "e"],
+  @board=[["b", "r", "a", "e"],
              ["i", "o", "d", "t"],
              ["e", "c", "l", "r"],
              ["t", "a", "k", "e"]]
@@ -23,7 +22,7 @@ def create_word(*coords)
 end
 
 def get_row(row)
-	@board[row].join(" ")
+  @board[row].join(" ")
 end
 
 def get_column(column)

@@ -64,6 +64,7 @@ def get_column(board,column)
 end
 
 puts get_column(boggle_board,3)
+
 # Refactored Solution
 
 
